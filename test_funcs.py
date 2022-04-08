@@ -11,14 +11,14 @@ class test_funcs(unittest.TestCase):
 
     def test_get_tax_amount(self):
         """Tests result of tax calculation given user input"""
-        #setup
-        house_price = 250000
-        multiplier = 0.02
-        
-        expected = 5000
-        
-        #result
-        self.assertEqual(functions.get_tax_amount(house_price, multiplier), expected)
+        self.assertEqual(functions.get_tax_amount(295000), 4750)
+        self.assertEqual(functions.get_tax_amount(124000), 0)
+        self.assertEqual(functions.get_tax_amount(500000), 15000)    
+        self.assertEqual(functions.get_tax_amount(700000), 25000)
+        #self.assertEqual(functions.get_tax_amount(1000000), 43750)
+        #self.assertEqual(functions.get_tax_amount(10000000), 1113750)
+        self.assertEqual(functions.get_tax_amount(250000), 2500)
+        self.assertEqual(functions.get_tax_amount(125000), 0)
         
 
 if __name__ == '__main__':
